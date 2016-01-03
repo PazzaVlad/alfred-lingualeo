@@ -5,4 +5,5 @@
 - При нажатии на Enter выбранное слово добавляет в словарь. Для это вам нужно указать свой логин и пароль в workflow (В дальнейшем будет более удобная авторизация).
 - Если слово уже есть в соваре - оно не добавляется (вы получите соответствующее уведомление).
 
-Фото
+
+![Alfred 2 для lingualeo](https://github.com/PazzaVlad/alfred-lingualeo/blob/master/screenshots/lingualeo-alfred-screen.png)
