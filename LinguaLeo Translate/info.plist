@@ -30,11 +30,33 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>499A2110-4FBE-47F9-81CE-AAE53240A12A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>06D685F0-8C1F-4FAE-9081-4F3FAFFCFF3C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>76FA076D-3A98-462E-86F6-E97B6D77E542</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>6450C280-CAC3-4F42-B87C-4969821864F8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8F87BA73-E601-4C98-BD5E-94F87CFE838B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>499A2110-4FBE-47F9-81CE-AAE53240A12A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -55,81 +77,13 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>1</integer>
-				<key>hotkey</key>
-				<integer>16</integer>
-				<key>hotmod</key>
-				<integer>1835008</integer>
-				<key>hotstring</key>
-				<string>Y</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>1B066AF4-C14A-4285-87BA-5D1E5675187D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>2</string>
-				<key>queuedelaycustom</key>
-				<integer>5</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>2</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Translating...</string>
-				<key>script</key>
-				<string>import translate
-print translate.translate_text("{query}")</string>
-				<key>subtext</key>
-				<string>Translate piece of text in LinguaLeo</string>
-				<key>title</key>
-				<string>Translate in LinguaLeo</string>
-				<key>type</key>
-				<integer>3</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>2BE76995-48E9-4171-9E20-C32DC629EE61</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>mail = "yourmail"
-password = "yourpassword"
-
-import addtodictionary
-print addtodictionary.add_to_dictionary("{query}", mail, password)</string>
+				<string>import addtodictionary
+print addtodictionary.add_to_dictionary("{query}")</string>
 				<key>type</key>
 				<integer>3</integer>
 			</dict>
@@ -156,7 +110,7 @@ print addtodictionary.add_to_dictionary("{query}", mail, password)</string>
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>Добавлено в словарь</string>
+				<string>Lingualeo</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -165,11 +119,145 @@ print addtodictionary.add_to_dictionary("{query}", mail, password)</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>hotkey</key>
+				<integer>5</integer>
+				<key>hotmod</key>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>G</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>1B066AF4-C14A-4285-87BA-5D1E5675187D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>queuedelaycustom</key>
+				<integer>5</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>2</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Translating...</string>
+				<key>script</key>
+				<string>import translate
+print translate.translate_text("{query}")</string>
+				<key>subtext</key>
+				<string>Translate piece of text in Lingualeo</string>
+				<key>title</key>
+				<string>Translate in Lingualeo</string>
+				<key>type</key>
+				<integer>3</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2BE76995-48E9-4171-9E20-C32DC629EE61</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>import authorization
+print authorization.log_in("{query}")</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>499A2110-4FBE-47F9-81CE-AAE53240A12A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>loginleo</string>
+				<key>subtext</key>
+				<string>Введите ваш e-mail и пароль через пробел и нажмите клавишу Enter</string>
+				<key>text</key>
+				<string>Log in to Lingualeo.com</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8F87BA73-E601-4C98-BD5E-94F87CFE838B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Lingualeo</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>06D685F0-8C1F-4FAE-9081-4F3FAFFCFF3C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>06D685F0-8C1F-4FAE-9081-4F3FAFFCFF3C</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
 		<key>1B066AF4-C14A-4285-87BA-5D1E5675187D</key>
 		<dict>
 			<key>ypos</key>
@@ -180,15 +268,25 @@ print addtodictionary.add_to_dictionary("{query}", mail, password)</string>
 			<key>ypos</key>
 			<real>90</real>
 		</dict>
-		<key>6450C280-CAC3-4F42-B87C-4969821864F8</key>
+		<key>499A2110-4FBE-47F9-81CE-AAE53240A12A</key>
 		<dict>
 			<key>ypos</key>
 			<real>260</real>
+		</dict>
+		<key>6450C280-CAC3-4F42-B87C-4969821864F8</key>
+		<dict>
+			<key>ypos</key>
+			<real>90</real>
 		</dict>
 		<key>76FA076D-3A98-462E-86F6-E97B6D77E542</key>
 		<dict>
 			<key>ypos</key>
 			<real>90</real>
+		</dict>
+		<key>8F87BA73-E601-4C98-BD5E-94F87CFE838B</key>
+		<dict>
+			<key>ypos</key>
+			<real>260</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

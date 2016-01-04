@@ -12,9 +12,14 @@ def translate_text(query):
 		response = urllib.urlopen(url)
 		data = json.loads(response.read())
 		output = data["translate"]
+		sorted_output = sorted(output, key=lambda student: int(student['votes']), reverse=True)
 		fb = feedback.Feedback()
-		for x in sorted(output, key=lambda student: int(student['votes']), reverse = True):
-			fb.add_item(title=x["value"], subtitle=str(x["votes"]), arg=query +"||"+ x["value"])
+		
+		for item in sorted_output:
+			translation = item["value"]
+			popularity = str(item["votes"])
+			arguments = query+"||"+str(item["id"])
+			fb.add_item(title=translation, subtitle=popularity, arg=arguments)
 		return fb
 	except Exception as e:
 		return "ERROR:Cannot translate this text!"

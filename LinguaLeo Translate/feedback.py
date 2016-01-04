@@ -41,7 +41,7 @@ class Feedback():
         """
         Should use 'uid=str(subtitle)' for sorting items by its statistic.
         """
-        item = et.SubElement(self.feedback, 'item', uid=str(subtitle), arg=arg, valid=valid, autocomplete=autocomplete)
+        item = et.SubElement(self.feedback, 'item', arg=arg, valid=valid, autocomplete=autocomplete)
         _title = et.SubElement(item, 'title')
         _title.text = title
         _sub = et.SubElement(item, 'subtitle')
