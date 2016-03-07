@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>LinguaLeo Translate</string>
+	<string>LinguaLeo</string>
 	<key>category</key>
 	<string>Internet</string>
 	<key>connections</key>
@@ -18,7 +18,17 @@
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2677DDC6-7621-4166-9CD3-0F72D4627426</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
 		</array>
+		<key>2677DDC6-7621-4166-9CD3-0F72D4627426</key>
+		<array/>
 		<key>2BE76995-48E9-4171-9E20-C32DC629EE61</key>
 		<array>
 			<dict>
@@ -63,9 +73,28 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>EEE9065F-CCEC-4FE2-A130-FD2C3C64F380</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2677DDC6-7621-4166-9CD3-0F72D4627426</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A4D9E4FE-9A60-4260-9F48-ADB54F9D0B34</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Search in Fraze.it</string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Vlad Harbarchuk</string>
+	<string>Vlad Harb</string>
 	<key>description</key>
 	<string></string>
 	<key>disabled</key>
@@ -80,12 +109,11 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>0</integer>
+				<integer>102</integer>
 				<key>script</key>
-				<string>import addtodictionary
-print addtodictionary.add_to_dictionary("{query}")</string>
+				<string>python addtodictionary.py "{query}"</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -127,11 +155,11 @@ print addtodictionary.add_to_dictionary("{query}")</string>
 				<key>argument</key>
 				<integer>1</integer>
 				<key>hotkey</key>
-				<integer>5</integer>
+				<integer>17</integer>
 				<key>hotmod</key>
 				<integer>1835008</integer>
 				<key>hotstring</key>
-				<string>G</string>
+				<string>T</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -154,24 +182,24 @@ print addtodictionary.add_to_dictionary("{query}")</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>queuedelaycustom</key>
-				<integer>5</integer>
+				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
-				<true/>
+				<false/>
 				<key>queuedelaymode</key>
-				<integer>2</integer>
+				<integer>0</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Translating...</string>
 				<key>script</key>
-				<string>import translate
-print translate.translate_text("{query}")</string>
+				<string>python translate.py "{query}"
+</string>
 				<key>subtext</key>
 				<string>Translate piece of text in Lingualeo</string>
 				<key>title</key>
 				<string>Translate in Lingualeo</string>
 				<key>type</key>
-				<integer>3</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<false/>
 			</dict>
@@ -179,6 +207,82 @@ print translate.translate_text("{query}")</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>2BE76995-48E9-4171-9E20-C32DC629EE61</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python sound.py "{query}"
+afplay tmp/sound.mp3
+</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2677DDC6-7621-4166-9CD3-0F72D4627426</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>lldic</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Downloading images, please wait...</string>
+				<key>script</key>
+				<string>python showdictionary.py "{query}"
+</string>
+				<key>subtext</key>
+				<string>Ваш словарь LinguaLeo</string>
+				<key>title</key>
+				<string>LinguaLeo Dictionary</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>EEE9065F-CCEC-4FE2-A130-FD2C3C64F380</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<true/>
+				<key>url</key>
+				<string>http://fraze.it/n_search.jsp?q={query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A4D9E4FE-9A60-4260-9F48-ADB54F9D0B34</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -199,27 +303,6 @@ print authorization.log_in("{query}")</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>499A2110-4FBE-47F9-81CE-AAE53240A12A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>loginleo</string>
-				<key>subtext</key>
-				<string>Введите ваш e-mail и пароль через пробел и нажмите клавишу Enter</string>
-				<key>text</key>
-				<string>Log in to Lingualeo.com</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>8F87BA73-E601-4C98-BD5E-94F87CFE838B</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -248,6 +331,27 @@ print authorization.log_in("{query}")</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>llsignin</string>
+				<key>subtext</key>
+				<string>Введите ваш e-mail и пароль через пробел и нажмите клавишу Enter</string>
+				<key>text</key>
+				<string>Log in to Lingualeo.com</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8F87BA73-E601-4C98-BD5E-94F87CFE838B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -256,37 +360,52 @@ print authorization.log_in("{query}")</string>
 		<key>06D685F0-8C1F-4FAE-9081-4F3FAFFCFF3C</key>
 		<dict>
 			<key>ypos</key>
-			<real>260</real>
+			<real>690</real>
 		</dict>
 		<key>1B066AF4-C14A-4285-87BA-5D1E5675187D</key>
 		<dict>
 			<key>ypos</key>
-			<real>90</real>
+			<real>150</real>
+		</dict>
+		<key>2677DDC6-7621-4166-9CD3-0F72D4627426</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
 		</dict>
 		<key>2BE76995-48E9-4171-9E20-C32DC629EE61</key>
 		<dict>
 			<key>ypos</key>
-			<real>90</real>
+			<real>150</real>
 		</dict>
 		<key>499A2110-4FBE-47F9-81CE-AAE53240A12A</key>
 		<dict>
 			<key>ypos</key>
-			<real>260</real>
+			<real>690</real>
 		</dict>
 		<key>6450C280-CAC3-4F42-B87C-4969821864F8</key>
 		<dict>
 			<key>ypos</key>
-			<real>90</real>
+			<real>150</real>
 		</dict>
 		<key>76FA076D-3A98-462E-86F6-E97B6D77E542</key>
 		<dict>
 			<key>ypos</key>
-			<real>90</real>
+			<real>150</real>
 		</dict>
 		<key>8F87BA73-E601-4C98-BD5E-94F87CFE838B</key>
 		<dict>
 			<key>ypos</key>
-			<real>260</real>
+			<real>690</real>
+		</dict>
+		<key>A4D9E4FE-9A60-4260-9F48-ADB54F9D0B34</key>
+		<dict>
+			<key>ypos</key>
+			<real>430</real>
+		</dict>
+		<key>EEE9065F-CCEC-4FE2-A130-FD2C3C64F380</key>
+		<dict>
+			<key>ypos</key>
+			<real>350</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
