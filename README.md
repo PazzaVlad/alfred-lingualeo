@@ -1,6 +1,6 @@
 # Alfred 2 Workflow для перевода и добавления слов в lingualeo
 
-###[Download](https://github.com/PazzaVlad/alfred-lingualeo/blob/master/LinguaLeo%20Translate.alfredworkflow?raw=true)
+###[Download](https://github.com/PazzaVlad/alfred-lingualeo/releases/download/1.1.0/LinguaLeo.Translate.alfredworkflow?raw=true)
 
 **Возможности**:
 - Перевод выделенного текста (слов, фраз и выражений) при помощи шортката (У меня это CMD+CTRL+OPTION+T, но вы можете установить любой другой).
