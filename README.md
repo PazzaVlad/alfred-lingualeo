@@ -1,8 +1,11 @@
 # Alfred 2 Workflow для перевода и добавления слов в LinguaLeo
 
-###[Download (V 1.1.0)](https://github.com/PazzaVlad/alfred-lingualeo/releases/download/1.1.0/LinguaLeo.Translate.alfredworkflow?raw=true)
+###[Download (v1.1.0)](https://github.com/PazzaVlad/alfred-lingualeo/releases/download/1.1.0/LinguaLeo.Translate.alfredworkflow?raw=true)
 
 #### Возможности:
+
+![](https://github.com/PazzaVlad/alfred-lingualeo/blob/master/screenshots/alfred_1.jpg)
+
 **Перевод слов**:
 - Перевод выделенного текста (слов, фраз и выражений) при помощи шортката (У меня это CMD+CTRL+OPTION+T, но вы можете установить любой другой).
 - Автоматическая озвучка слов диктором и фраз роботом при переводе
@@ -15,8 +18,6 @@
 - "lldic w" показывает только слова.
 - "lldic p" показывает только фразы, выражения, фразовые глаголы.
 - "lldic r" выводит рандомное слово или фразу из словаря.
-
-![](https://github.com/PazzaVlad/alfred-lingualeo/blob/master/screenshots/alfred_1.jpg)
 
 ![](https://github.com/PazzaVlad/alfred-lingualeo/blob/master/screenshots/alfred_2.jpg)
 
