@@ -23,10 +23,10 @@ def log_in(query):
         # If data are correct momorize it. If not throw an error
 		if not "error_code" in try_log_in:
 			data = email+"||"+password
-			with open('data', 'w') as database:
+			with open('tmp/credentials', 'w') as database:
 				database.write(base64.b64encode(data))
 			return "You have successfully logged in"
 		else:
 			return "Error! Cannot log in to lingualeo. Check your e-mail and password"
 	except Exception as e:
-		print "ERROR: Cannot log in or write to file"
+		return "ERROR: Cannot log in or write to file"
