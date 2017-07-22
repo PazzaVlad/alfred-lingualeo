@@ -25,28 +25,20 @@ def check_cache():
             output_words()
         else:
             output_words()
-    elif os.path.isfile('tmp/credentials'):
+    else:
         set_cache(auth_to_lingualeo())
         output_words()
-    else:
-        fb = feedback.Feedback()
-        fb.add_item(title='Please, enter command "llsignin" for sign in to Lingualeo!')
-        print fb
-
 
 
 def auth_to_lingualeo():
     # Check if you log in to lingualeo.com and can add words
-    try:
-        with open('tmp/credentials', "r") as data_file:
-            auth_data = data_file.read()
-        if len(auth_data) < 1:
-            fb = feedback.Feedback()
-            fb.add_item(title= "You are not logged in to Lingualeo!", subtitle="")
-            print fb
-            sys.exit()
-    except Exception as e:
-        return "ERROR 34"
+    with open('data', "r") as data_file:
+        auth_data = data_file.read()
+    if len(auth_data) < 1:
+        fb = feedback.Feedback()
+        fb.add_item(title= "You are not logged in to Lingualeo!", subtitle="")
+        print fb
+        sys.exit()
 
     # Loggin in
     auth_data_split = base64.b64decode(auth_data).split("||")
@@ -69,10 +61,6 @@ def set_cache(opener):
 
     json_from_file = open("tmp/dict.json")
     data = json.loads(json_from_file.read())
-
-    if not os.path.exists(r'tmp/img/'):
-        os.makedirs(r'tmp/img/')
-
 
     for item in data["userdict3"]:
         for word in item["words"]:

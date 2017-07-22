@@ -17,7 +17,7 @@ query = str(sys.argv[1])
 def add_to_dictionary(query):
 
 	# Check if you log in to lingualeo.com and can add words
-	with open('tmp/credentials', "r") as data_file:
+	with open('data', "r") as data_file:
 		auth_data = data_file.read()
 	if len(auth_data) < 1:
 		print "You are not logged in to Lingualeo! Введите команду 'llsignin'!"
