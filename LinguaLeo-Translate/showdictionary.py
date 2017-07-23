@@ -10,22 +10,23 @@ import time
 import feedback
 import sys
 from random import randint
+import appdata
 
 
 query = str(sys.argv[1])
 
 
 def check_cache():
-    if os.path.isfile('tmp/dict.json'):
+    if os.path.isfile(appdata.DICT_FILE_PATH):
         current_time = time.time()
-        time_of_changing_file = os.path.getmtime('tmp/dict.json')
+        time_of_changing_file = os.path.getmtime(appdata.DICT_FILE_PATH)
         difference = int(current_time - time_of_changing_file)
         if difference > 300:
             set_cache(auth_to_lingualeo())
             output_words()
         else:
             output_words()
-    elif os.path.isfile('tmp/credentials'):
+    elif os.path.isfile(appdata.CREDENTIALS_FILE_PATH):
         set_cache(auth_to_lingualeo())
         output_words()
     else:
@@ -38,7 +39,7 @@ def check_cache():
 def auth_to_lingualeo():
     # Check if you log in to lingualeo.com and can add words
     try:
-        with open('tmp/credentials', "r") as data_file:
+        with open(appdata.CREDENTIALS_FILE_PATH, "r") as data_file:
             auth_data = data_file.read()
         if len(auth_data) < 1:
             fb = feedback.Feedback()
@@ -64,14 +65,14 @@ def auth_to_lingualeo():
 
 def set_cache(opener):
     response = opener.open("http://lingualeo.com/ru/userdict/json")
-    with open("tmp/dict.json", "wb") as dict:
+    with open(appdata.DICT_FILE_PATH, "wb") as dict:
         dict.write(str(response.read()))
 
-    json_from_file = open("tmp/dict.json")
+    json_from_file = open(appdata.DICT_FILE_PATH)
     data = json.loads(json_from_file.read())
 
-    if not os.path.exists(r'tmp/img/'):
-        os.makedirs(r'tmp/img/')
+    if not os.path.exists(appdata.IMG_FOLDER_PATH):
+        os.makedirs(appdata.IMG_FOLDER_PATH)
 
 
     for item in data["userdict3"]:
@@ -79,7 +80,7 @@ def set_cache(opener):
             if word["picture_url"]:
                 picture = 'http:' + word["picture_url"]
                 img_name = picture.split('/')[-1]
-                img_folder = r'tmp/img/'
+                img_folder = appdata.IMG_FOLDER_PATH
                 img_path = img_folder + img_name
                 if not os.path.isfile(img_path):
                     f = open(img_path,'wb')
@@ -89,7 +90,7 @@ def set_cache(opener):
 
 
 def parse_words():
-    json_from_file = open("tmp/dict.json")
+    json_from_file = open(appdata.DICT_FILE_PATH)
     data = json.loads(json_from_file.read())
 
     dictionary = []
@@ -103,7 +104,7 @@ def parse_words():
             picture = word["picture_url"]
             if picture:
                 img_name = picture.split('/')[-1]
-                img_folder = r'tmp/img/'
+                img_folder = appdata.IMG_FOLDER_PATH
                 card['img_path'] = img_folder + img_name
             else:
                 card['img_path'] = 'default.png'

@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.lingualeo.alfred</string>
-	<key>category</key>
-	<string>Internet</string>
 	<key>connections</key>
 	<dict>
 		<key>1B066AF4-C14A-4285-87BA-5D1E5675187D</key>
@@ -175,11 +173,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>35</integer>
+				<integer>37</integer>
 				<key>hotmod</key>
-				<integer>1835008</integer>
+				<integer>786432</integer>
 				<key>hotstring</key>
-				<string>P</string>
+				<string>L</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -247,8 +245,8 @@
 				<integer>102</integer>
 				<key>script</key>
 				<string>python sound.py "{query}"
-afplay tmp/sound.mp3
-</string>
+
+afplay ~/Library/Caches/com.runningwithcrayons.Alfred-3/Workflow\ Data/sound.mp3</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>

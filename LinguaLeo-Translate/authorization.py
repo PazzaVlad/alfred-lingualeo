@@ -5,6 +5,7 @@ import urllib2
 from cookielib import CookieJar
 import json
 import base64
+import appdata
 
 def log_in(query):
     # Parse mail and password
@@ -23,7 +24,7 @@ def log_in(query):
         # If data are correct momorize it. If not throw an error
 		if not "error_code" in try_log_in:
 			data = email+"||"+password
-			with open('tmp/credentials', 'w') as database:
+			with open(appdata.CREDENTIALS_FILE_PATH, 'w') as database:
 				database.write(base64.b64encode(data))
 			return "You have successfully logged in"
 		else:

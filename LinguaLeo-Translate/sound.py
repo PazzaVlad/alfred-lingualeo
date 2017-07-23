@@ -5,8 +5,11 @@ import urllib2
 import json
 import sys
 from time import sleep
+import appdata
+
 
 word = str(sys.argv[1])
+
 
 # TODO: DRY!
 def get_json(query):
@@ -29,9 +32,9 @@ def sound_text(word):
 		data = get_json(word)
 		url = data["sound_url"]
 		f = urllib2.urlopen(url)
-	with open("tmp/sound.mp3", "wb") as code:
+	with open(appdata.SOUND_FILE_PATH, "wb") as code:
 		code.write(f.read())
-
+		
 
 if __name__ == "__main__":
 	sound_text(word)
