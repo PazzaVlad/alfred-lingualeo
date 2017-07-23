@@ -1,6 +1,8 @@
 # Alfred 3 Workflow для перевода и добавления слов в LinguaLeo
 
-### Версия для Alfred 2 [Скачать (v1.1.0)](https://github.com/PazzaVlad/alfred-lingualeo/releases/download/1.1.0/LinguaLeo.Translate.alfredworkflow?raw=true)
+### Версия для Alfred 3 [Скачать (v1.2.0)](https://github.com/PazzaVlad/alfred-lingualeo/releases/download/1.2.0/LinguaLeo.Translate.alfredworkflow?raw=true)
+
+### Версия для Alfred 2 [Скачать (v1.1.1)](https://github.com/PazzaVlad/alfred-lingualeo/releases/download/1.1.0/LinguaLeo.Translate.alfredworkflow?raw=true)
 
 #### Возможности:
 
